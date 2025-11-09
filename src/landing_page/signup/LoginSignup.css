@@ -1,0 +1,290 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  list-style: none;
+}
+
+
+/* Main Wrapper */
+.main-wrapper {
+  position: relative;
+  width: 800px;
+  height: 500px;
+  background: #fff;
+  margin: 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  margin: 100px auto;
+}
+
+.main-wrapper h1 {
+  font-size: 36px;
+  margin: -10px 0;
+}
+
+.main-wrapper p {
+  font-size: 14.5px;
+  margin: 15px 0;
+}
+
+form {
+  width: 100%;
+}
+
+/* Form Container */
+.form-container {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-align: center;
+  padding: 40px;
+  z-index: 1;
+  transition:
+    0.6s ease-in-out 1.2s,
+    visibility 0s 1s;
+}
+
+.main-wrapper.active-mode .form-container {
+  right: 50%;
+}
+
+.form-container.register-section {
+  visibility: hidden;
+}
+
+.main-wrapper.active-mode .form-container.register-section {
+  visibility: visible;
+}
+
+/* Input Field */
+.field-box {
+  position: relative;
+  margin: 30px 0;
+}
+
+.field-box input {
+  width: 100%;
+  padding: 13px 50px 13px 20px;
+  background: #eee;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.field-box input::placeholder {
+  color: #888;
+  font-weight: 400;
+}
+
+.field-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+}
+
+/* Forgot Password */
+.forgot-area {
+  margin: -15px 0 15px;
+}
+
+.forgot-area a {
+  font-size: 14.5px;
+  color: #333;
+}
+
+/* Main Button */
+.main-btn {
+  width: 100%;
+  height: 48px;
+  background: #387ED1;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Social Icons */
+.icon-group {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-group a {
+  display: inline-flex;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 24px;
+  color: #333;
+  margin: 0 8px;
+}
+
+/* Switch Box */
+.switch-box {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.switch-box::before {
+  content: "";
+  position: absolute;
+  left: -250%;
+  width: 300%;
+  height: 100%;
+  background: #387ED1;
+  border-radius: 150px;
+  z-index: 2;
+  transition: 1.8s ease-in-out;
+}
+
+.main-wrapper.active-mode .switch-box::before {
+  left: 50%;
+}
+
+/* Switch Panels */
+.switch-panel {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transition: 0.6s ease-in-out;
+}
+
+.switch-panel.panel-left {
+  left: 0;
+  transition-delay: 1.2s;
+}
+
+.main-wrapper.active-mode .switch-panel.panel-left {
+  left: -50%;
+  transition-delay: 0.6s;
+}
+
+.switch-panel.panel-right {
+  right: -50%;
+  transition-delay: 0.6s;
+}
+
+.main-wrapper.active-mode .switch-panel.panel-right {
+  right: 0;
+  transition-delay: 1.2s;
+}
+
+.switch-panel p {
+  margin-bottom: 20px;
+}
+
+/* Switch Buttons */
+.switch-panel .main-btn {
+  width: 160px;
+  height: 46px;
+  background: transparent;
+  border: 2px solid #fff;
+  box-shadow: none;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 650px) {
+  .main-wrapper {
+    height: calc(100vh - 40px);
+  }
+
+  .form-container {
+    bottom: 0;
+    width: 100%;
+    height: 70%;
+  }
+
+  .main-wrapper.active-mode .form-container {
+    right: 0;
+    bottom: 30%;
+  }
+
+  .switch-box::before {
+    left: 0;
+    top: -270%;
+    width: 100%;
+    height: 300%;
+    border-radius: 20vw;
+  }
+
+  .main-wrapper.active-mode .switch-box::before {
+    left: 0;
+    top: 70%;
+  }
+
+  .main-wrapper.active-mode .switch-panel.panel-left {
+    left: 0;
+    top: -30%;
+  }
+
+  .switch-panel {
+    width: 100%;
+    height: 30%;
+  }
+
+  .switch-panel.panel-left {
+    top: 0;
+  }
+
+  .switch-panel.panel-right {
+    right: 0;
+    bottom: -30%;
+  }
+
+  .main-wrapper.active-mode .switch-panel.panel-right {
+    bottom: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .form-container {
+    padding: 20px;
+  }
+
+  .switch-panel h1 {
+    font-size: 30px;
+  }
+}
+
+/* --- Social Icons Brand Colors --- */
+.icon-group a .bxl-gmail {
+  color: #4285F4;
+}
+
+.icon-group a .bxl-instagram {
+  color: #d33e3e;
+}
+
+.icon-group a .bxl-github {
+  color: #181717;
+}
+
+.icon-group a .bxl-linkedin {
+  color: #0A66C2;
+}
