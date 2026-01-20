@@ -49,3 +49,6 @@ code {
 #supportRight h1 {
   padding-left: 30px;
 }
+@media (max-width: 480px) { 
+  
+}
